@@ -1,0 +1,412 @@
+// Asignar Variables
+let dato = 10;
+console.log(dato);
+typeof dato; //Conocer que tipo es
+
+let dato2;
+dato2 = 11;
+typeof dato2;
+
+let Saludo = 'Hola ';
+typeof Saludo;
+
+let miBooleano = true;
+typeof miBooleano;
+
+let DN;
+typeof DN;
+
+//Operadores
+let suma = dato + dato2;
+suma;
+
+let resta = dato - dato2;
+resta;
+
+let multiplicar = dato * dato2;
+multiplicar;
+
+let dividir = dato / dato2;
+dividir;
+
+let potencia = dato2 ** dato;
+potencia;
+
+let frase = Saludo + 'Mundo'; //Permite utilizar variables string para crear textos
+frase;
+typeof frase;
+
+let incremento = ++dato2; // y = x + 1    x = x + 1
+incremento;
+dato2;
+
+let ecremento = dato++; // y = x          x = x + 1
+ecremento;
+dato;
+
+let decremento = dato--; // y = x          x = x - 1
+decremento;
+dato;
+
+let predecremento = --dato2; // y = x - 1   x = x - 1
+predecremento;
+dato2;
+
+//Operador Booleano
+!true; //Negacion = Muestra lo contrario
+!false;
+
+!!true; //Doble negacion = Contrario de lo contrario (- * -)
+!!false;
+
+true === true; //Operadores de igualdad
+true === false;
+
+true !== false; //Distinto = Es x distinto a y?
+true !== true;
+
+3 == '3'; // Por esto mismo utilizamos 3 "=", ya que el 3 verifica el tipo
+3 === '3';
+
+let Comparacion = dato > dato2; //Comparacion
+let Comparacion2 = dato < dato2;
+dato === dato2;
+dato2 <= dato;
+4 <= 4;
+'a' < 'b'; //Ordenar caracteres
+
+//Operadores logicos
+Comparacion2 && Comparacion2 && Comparacion2; //AND = Muestra true si todos son true
+Comparacion2 && Comparacion2 && Comparacion;
+false && Comparacion2;
+dato && dato2; //Ambos true muestra al ultimo dato
+
+Comparacion || Comparacion || Comparacion; // OR = Muestra false si todos son false
+Comparacion || Comparacion || Comparacion2;
+
+const port = process.env.PORT || 3000; //Si el primero es falso, devuelva el segundo
+port;
+
+//Condicionales
+//If y ELSE
+if (dato < dato2) console.log('Es true');
+else console.log('Es false');
+if (dato > dato2) console.log('Es true');
+else console.log('Es false');
+
+let dato3 = 13;
+let dato4 = 8;
+let operacion = dato3 + dato4;
+if (operacion > 21) console.log('Es mayor a 21');
+else if (operacion <= 21 && operacion >= 13)
+  console.log('Su resultado está entre 13 y 21');
+else console.log('Su resultado es menor a 13');
+
+//SWITCH = Hace algo en base a un resultado que asignemos
+switch (operacion) {
+  case operacion < 0:
+    console.log('Es un número muy pequeño XD');
+    break;
+  case 0 || 1 || 2 || 3 || 4 || 5 || 6 || 7 || 8 || 9 || 10:
+    console.log('Su resultado está entre 0 y 10');
+    break;
+  case 11 || 12 || 13 || 14 || 15 || 16 || 17 || 18 || 19 || 20:
+    console.log('Su resultado está entre 11 y 20');
+    break;
+  case 21 || 22 || 23 || 24 || 25 || 26 || 27 || 28 || 29 || 30:
+    console.log('Su resultado está entre  21 y 30');
+    break;
+  case operacion > 30:
+    console.log('Es un número muy grande XD');
+    break;
+  case 1000000000:
+    console.log(
+      'Estoy mil millones por ciento seguro que hiciste eso por Dr.Stone'
+    );
+}
+//Funciones
+function saludar(nombre = 'Persona') {
+  return `¡Hola ${nombre}!`;
+}
+saludar();
+saludar('Juan');
+
+//Funciones como clases
+function Inventario(nombre) {
+  this.nombre = nombre;
+  this.articulos = [];
+}
+Inventario.prototype.getNombre = function () {
+  return this.nombre;
+};
+Inventario.prototype.add = function (articulo, cantidad) {
+  this.articulos[articulo] = cantidad;
+};
+Inventario.prototype.cantidad = function (articulo) {
+  return this.articulos[articulo];
+};
+let videojuegos = new Inventario('Videojuegos');
+videojuegos.getNombre;
+videojuegos.add('Final Fantasy', 10);
+videojuegos.cantidad('Final Fantasy');
+
+//Clases ECMAScript 6
+class Inventario2 {
+  constructor(nombre) {
+    this.nombre = nombre;
+    this.articulos = [];
+  }
+  getNombre() {
+    return this.nombre;
+  }
+  add(articulo, cantidad) {
+    this.articulos[articulo] = cantidad;
+  }
+  cantidad(articulo) {
+    return this.articulos[articulo];
+  }
+}
+//Bucle WHILE = Primero revisa si se cumple la condicion y luego de ejecuta
+let condicion;
+condicion = 20;
+while (condicion > 15) {
+  console.log(condicion);
+  --condicion;
+}
+
+function bucleWhile(num) {
+  let condicion2 = 25;
+  while (condicion2 < num) {
+    console.log(condicion2);
+    ++condicion2;
+  }
+}
+bucleWhile(30);
+
+//Bucle DO While = Primero lo ejecuta y revisa si el siguiente cumple la condicion
+function doWhile(num) {
+  let condicion3 = 0;
+  do {
+    console.log(condicion3);
+    condicion3++;
+  } while (condicion3 <= num);
+}
+doWhile(7);
+//Bucle FOR
+//Estructura = for (incializacion; condicion; actualizacion)
+function buclefor(num) {
+  for (let inicializacion = 5; inicializacion < num; ++inicializacion) {
+    console.log(inicializacion);
+  }
+}
+buclefor(9);
+//ARRAY = Es una estructura de datos en la cual podemos almacenar datos y variables
+//Ejemplos: Strings, int, variables, arrays, objeto.
+const array = [];
+array[0] = 1;
+array[1] = 'XD';
+2 + array[0];
+array[3] = 50;
+
+const array2 = new Array(20);
+//Buenas practicas en bucles FOR
+const objeto = {
+  unArray: new Array(10),
+  unArray2: new Array(6),
+};
+let longitud = objeto.unArray.length;
+for (let x = 0; x < longitud; x++) {
+  objeto.unArray[x] = 'Hola';
+  objeto.unArray;
+}
+
+//Tiempo de ejecucion
+function BadPerformance() {
+  console.time('Bad');
+  for (let y = 0; y < objeto.unArray2.length; y++) {
+    objeto.unArray2[y] = 'Hola XD';
+  }
+  console.timeEnd('Bad');
+}
+function GoodPerformance() {
+  console.time('Good');
+  let longitud2 = objeto.unArray2.length;
+  for (let a = 0; a < longitud2; a++) {
+    objeto.unArray2[a] = 'Hola XDD';
+  }
+  console.timeEnd('Good');
+}
+BadPerformance();
+GoodPerformance();
+objeto.unArray2;
+//Bucle FOREACH para Arrays
+const miArray = [1, 2, 3, 4, 5];
+miArray.forEach(function (item, index) {
+  console.log('El valor de la posición ' + index + ' es ' + item);
+  console.log(`El valor de esta posicion ${index} es ${item}`);
+});
+//Recorrer propiedades de objetos
+const videojuego = {
+  titulo: 'Final Fantasy XVI',
+  compañia: 'Square Enix',
+  MemoriaNecesaria: '120 Gb',
+  Plataforma: 'PlayStation 5',
+  Precio: '85$',
+  Jugar: function () {
+    console.log('He jugado el juego');
+  },
+};
+const props = Object.getOwnPropertyNames(videojuego);
+props.forEach((name) => {
+  let valor = Object.getOwnPropertyDescriptor(videojuego, name).value;
+  console.log(`La prop ${name} contiene: ${valor}`);
+});
+//Bucle FOR...IN para Objetos
+for (let prop in videojuego) {
+  console.log(`La prop ${prop} contiene: ${videojuego[prop]}`);
+}
+//Clases Core = Object, Number, Módulo Math, Arrays, String
+
+// Object || Variables = Propiedades || Funciones = Métodos
+videojuego.titulo; // Notación Array
+videojuego['titulo']; // Notación Punto
+videojuego.titulo = 'Final Fantasy VII Remake Part 2'; // Modificar propiedad
+videojuego.titulo;
+let company = 'compañia';
+videojuego[company];
+videojuego.Jugar();
+
+//Creación de Objeto
+let manga = {};
+manga.titulo = 'Dragon Ball';
+
+let manga2 = new Object({ Titulo: 'Naruto', Autor: 'Masashi Kishimoto' });
+manga2.Titulo;
+manga2;
+
+//Propiedades en propiedades
+let dibujo = {
+  titulo: 'Sword Die',
+  autor: {
+    Nombres: 'Juan David',
+    Apellidos: 'Patarroyo Sanchez',
+    Alias: 'OsumeP',
+    Edad: 15,
+    Redes: {
+      instagram: 'p.Osume',
+      YouTube: 'Osume.P',
+      DevianArt: 'OsumeP',
+    },
+  },
+};
+dibujo.autor.Nombres;
+dibujo;
+dibujo.autor.Redes.DevianArt;
+//Comprobar si ciertas propiedes son iguales
+const cancion = { instrumento: 'Bateria', Genero: 'Rock' };
+const cancion2 = { instrumento: 'Bateria', Genero: 'Funk' };
+cancion === cancion2; //No, ya que no son la misma const y tienen props diferentes
+cancion.instrumento === cancion2.instrumento;
+const cancion3 = cancion;
+cancion === cancion3;
+//Number
+26; // int
+5.5; // decimal
+0xf; //Hexadecimal
+0x10; // Hexadecimal
+5.4e2; // Coma flotante
+5.4e-2 - // Coma flotante
+  2 / 0;
+12 / 0;
+2e1000;
+'a' / 23;
+
+let numero = 5;
+numero;
+let numero2 = new Number(454);
+numero2;
+
+//Parse
+parseInt('45');
+parseInt('0010', 2); //Binario
+parseInt('1011', 16); //Hexadecimal
+parseFloat('4e2'); //Coma Flotante
+
+//Redondear números
+let decimal = 0.2325345;
+decimal.toFixed(3);
+decimal;
+parseInt(decimal.toFixed(3));
+decimal.toExponential(2);
+
+// De Int a String
+(234).toString(10);
+(234).toString(2); //Binario
+(234).toString(16); //Hexadecimal
+
+//Módulo Math
+Math.PI; // Número Pi
+let pi = Math.PI;
+pi.toFixed(16);
+Math.E; // Número de Euler
+Math.random(); // Número Random
+Math.random();
+Math.pow(2, 8) === 2 ** 8;
+2 ** 8;
+Math.min(4, 7, 9); //Minimo
+Math.max(9, 3, 7, 51); //Maximo
+Math.sin(30);
+Math.cos(30);
+Math.tan(30);
+//Revisar la documentación Mozilla Developer Network para conocer mas
+//https://developer.mozilla.org/es/search?q=Math
+
+//Arrays
+let miArray2 = [[1, 2, 3], [4, 4.5, 6], 2, false, 'XD'];
+miArray2;
+miArray2[0];
+miArray2[1][1];
+miArray2.length; //Cantidad de valores
+
+let miArray3 = [4, 7, 2, 7, 0, 2, 6, 'Hola'];
+miArray3.sort(); //Ordena los valores
+miArray3;
+miArray3.pop(); //Muestra el último valor y lo saca
+miArray3;
+miArray3.push(43);
+miArray3;
+miArray3.reverse(); //Invierte el orden de los valores
+
+let nombre = 'Juan';
+const saludo = ['Hola', nombre, '¿Como te va?'].join(' '); //Unir variables y valores
+console.log(saludo);
+
+let raices = miArray2[0].map((item) => {
+  return Math.sqrt(item);
+}); //Hacer una operacion a los valores de un array
+raices;
+
+let miArray4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+let multiplos = miArray4.filter((item) => item % 3 === 0);
+multiplos; //Nos muestra ciertos valores que cumplan la condición
+
+miArray4.slice(5);
+miArray4;
+miArray4.slice(4, 6); //Empieza y termina en la ubicacion que indiquemos (Final-1 pos)
+
+//String
+'Hollow Knight'[3];
+'Hollow Knight'.length;
+'Hollow Knight'.charCodeAt(4); //Caracter en UniCode de la posición
+'Hollow Knight'.indexOf('Knight'); //Nos muestra la posicion de inicio de una serie de caracteres
+'Hollow Knight'.indexOf('Hornet');
+'Hollow Knight'.substring(4);
+'Hollow Knight'.substring(4, 10);
+
+const fecha = new Date();
+fecha;
+fecha.toString();
+fecha.toString().split('0'); // Segun el caracter que ponga, los caracteres del string se separaran en cajones (Como un array) por cada vez que aparezca el/los caracteres que introduje
+fecha.toString().split(' ');
+fecha.toString().split(' ')[4];
+fecha.toString().split(' ')[4].split(':')[0];
